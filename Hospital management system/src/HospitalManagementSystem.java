@@ -9,7 +9,7 @@ public class HospitalManagementSystem extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Custom Look and Feel (Optional)
+        
         try {
             UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
         } catch (Exception e) {
@@ -20,7 +20,7 @@ public class HospitalManagementSystem extends JFrame {
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
-        // Create the menu with some icons and tooltips for a prettier look
+    
         JMenu loginMenu = new JMenu("Login");
         JMenu patientMenu = new JMenu("Patient");
         JMenu appointmentMenu = new JMenu("Appointment");
@@ -29,7 +29,7 @@ public class HospitalManagementSystem extends JFrame {
         JMenu inventoryMenu = new JMenu("Inventory");
         JMenu staffMenu = new JMenu("Staff");
 
-        // Add tooltips to each menu for a user-friendly experience
+       
         loginMenu.setToolTipText("Login to access your account");
         patientMenu.setToolTipText("Register or manage patients");
         appointmentMenu.setToolTipText("Manage appointments");
@@ -38,7 +38,7 @@ public class HospitalManagementSystem extends JFrame {
         inventoryMenu.setToolTipText("Manage hospital inventory");
         staffMenu.setToolTipText("Staff management");
 
-        // Adding icons (assuming you have icons for each menu in the src folder)
+        // Adding icons
         loginMenu.setIcon(new ImageIcon("src/images/user-interface.png"));
         patientMenu.setIcon(new ImageIcon("src/images/hospitalisation.png"));
         appointmentMenu.setIcon(new ImageIcon("src/images/advice.png"));
@@ -56,7 +56,7 @@ public class HospitalManagementSystem extends JFrame {
         menuBar.add(inventoryMenu);
         menuBar.add(staffMenu);
 
-        // Menu Actions (Open forms for each module)
+        // Menu Actions
         loginMenu.add(new JMenuItem("Login")).addActionListener(e -> new LoginForm());
         patientMenu.add(new JMenuItem("Register Patient")).addActionListener(e -> new PatientRegistrationForm());
         appointmentMenu.add(new JMenuItem("Schedule Appointment")).addActionListener(e -> new AppointmentForm());
@@ -74,7 +74,7 @@ public class HospitalManagementSystem extends JFrame {
 
         // Center the welcome label in the window
         JPanel labelPanel = new JPanel();
-        labelPanel.setOpaque(false); // Ensures transparency for the background image
+        labelPanel.setOpaque(false);
         labelPanel.add(welcomeLabel);
 
         add(labelPanel, BorderLayout.CENTER);
@@ -83,14 +83,14 @@ public class HospitalManagementSystem extends JFrame {
         private Image backgroundImage;
 
         public BackgroundPanel(String imagePath) {
-            // Load the background image
+            
             backgroundImage = new ImageIcon(imagePath).getImage();
         }
 
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
-            // Draw the image to fill the background
+           
             g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
         }
     }
